@@ -1,0 +1,2324 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOZI企创赛 - 制造业方向 - 深访问卷填答表</title>
+<style>
+:root {
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-light: #dbeafe;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --bg: #f9fafb;
+  --card: #ffffff;
+  --border: #e5e7eb;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--gray-800);
+  line-height: 1.6;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: white;
+  padding: 32px 28px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.header .subtitle {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 16px;
+}
+
+.header .meta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.header .meta span {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.progress-bar {
+  background: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 20px;
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--gray-600);
+}
+
+.progress-track {
+  height: 8px;
+  background: var(--gray-100);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--success) 100%);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+.notice {
+  background: #fffbeb;
+  border-left: 4px solid var(--warning);
+  padding: 16px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: var(--gray-700);
+}
+
+.notice h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: var(--gray-800);
+}
+
+.notice ol {
+  margin-left: 20px;
+  margin-top: 8px;
+}
+
+.notice li {
+  margin-bottom: 4px;
+}
+
+.section {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--gray-100);
+}
+
+.section-number {
+  background: var(--primary);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.section-desc {
+  font-size: 13px;
+  color: var(--gray-500);
+  margin-bottom: 20px;
+  padding: 8px 12px;
+  background: var(--gray-50);
+  border-radius: 6px;
+}
+
+.question {
+  margin-bottom: 24px;
+  padding: 16px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.question:hover {
+  background: var(--gray-50);
+}
+
+.sub-q {
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: var(--gray-50);
+  border-left: 3px solid var(--primary-light);
+  border-radius: 6px;
+}
+
+.sub-q + .sub-q {
+  margin-top: 10px;
+}
+
+.sub-q .q-label {
+  margin-bottom: 8px;
+}
+
+.question.required .q-label::after {
+  content: " *";
+  color: var(--danger);
+}
+
+.q-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-800);
+  margin-bottom: 10px;
+  display: block;
+  line-height: 1.5;
+}
+
+.q-tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-right: 6px;
+  font-weight: 500;
+}
+
+.q-tag.var {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+}
+
+.q-tag.req {
+  background: #fee2e2;
+  color: var(--danger);
+}
+
+.q-hint {
+  font-size: 12px;
+  color: var(--gray-500);
+  margin-bottom: 10px;
+  padding-left: 12px;
+  border-left: 2px solid var(--gray-200);
+  margin-top: -4px;
+  margin-bottom: 12px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="datetime-local"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  background: white;
+  transition: all 0.2s;
+  color: var(--gray-800);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+input[type="datetime-local"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: white;
+  font-size: 14px;
+  user-select: none;
+}
+
+.option:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.option input {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--primary);
+  flex-shrink: 0;
+}
+
+.option.checked {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.option-text {
+  flex: 1;
+}
+
+.option-other {
+  margin-top: 8px;
+  display: none;
+}
+
+.option-other.visible {
+  display: block;
+}
+
+.list-input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.list-input input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.job-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.job-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.row-remove {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--border);
+  background: white;
+  color: var(--gray-500);
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.row-remove:hover:not(:disabled) {
+  border-color: var(--danger);
+  background: #fef2f2;
+  color: var(--danger);
+}
+
+.row-remove:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.actions {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  position: sticky;
+  bottom: 20px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--gray-700);
+  border: 1.5px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-success {
+  background: var(--success);
+  color: white;
+}
+
+.btn-success:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  background: var(--gray-800);
+  color: white;
+  border-radius: 8px;
+  box-shadow: var(--shadow-lg);
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s;
+  z-index: 1000;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.success {
+  background: var(--success);
+}
+
+.toast.error {
+  background: var(--danger);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 24px;
+  box-shadow: var(--shadow-lg);
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--gray-800);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.consent {
+  background: #fef3c7;
+  border: 1px solid #fcd34d;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+
+.consent label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.consent input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 12px;
+  }
+
+  .header {
+    padding: 20px 16px;
+  }
+
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .section {
+    padding: 16px;
+  }
+
+  .question {
+    padding: 12px;
+  }
+
+  .progress-bar {
+    position: relative;
+    top: 0;
+  }
+
+  .actions {
+    position: relative;
+    bottom: 0;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+
+  .header,
+  .progress-bar,
+  .actions,
+  .btn,
+  .top-tabs,
+  .admin-panel {
+    display: none !important;
+  }
+
+  .section,
+  .question {
+    box-shadow: none;
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+}
+
+/* ===== 顶部 Tab 切换 ===== */
+.top-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  background: white;
+  padding: 6px;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tab-btn:hover {
+  background: var(--gray-100);
+  color: var(--gray-800);
+}
+
+.tab-btn.active {
+  background: var(--primary);
+  color: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+/* ===== 管理面板 ===== */
+.admin-panel {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.admin-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.admin-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* 统计卡片 */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: var(--gray-50);
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--gray-500);
+}
+
+/* 筛选栏 */
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  padding: 12px;
+  background: var(--gray-50);
+  border-radius: 8px;
+}
+
+.filter-bar input,
+.filter-bar select {
+  padding: 8px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  font-size: 13px;
+  background: white;
+  flex: 1;
+  min-width: 120px;
+}
+
+.filter-bar input:focus,
+.filter-bar select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* 列表 */
+.survey-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.survey-card {
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.survey-card:hover {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.survey-card.expanded {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.survey-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.survey-no {
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--gray-500);
+  background: var(--gray-100);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.survey-company {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gray-800);
+  flex: 1;
+  min-width: 120px;
+}
+
+.survey-meta {
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--gray-500);
+  flex-wrap: wrap;
+}
+
+.survey-meta span {
+  background: var(--gray-100);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.survey-rate {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+}
+
+.rate-bar {
+  width: 60px;
+  height: 6px;
+  background: var(--gray-200);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.rate-fill {
+  height: 100%;
+  background: var(--success);
+  transition: width 0.3s;
+}
+
+.rate-fill.low {
+  background: var(--danger);
+}
+
+.rate-fill.mid {
+  background: var(--warning);
+}
+
+.survey-toggle {
+  background: none;
+  border: none;
+  color: var(--gray-400);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+
+.survey-toggle:hover {
+  color: var(--primary);
+}
+
+/* 详情 */
+.survey-detail {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  display: none;
+  font-size: 13px;
+}
+
+.survey-card.expanded .survey-detail {
+  display: block;
+}
+
+.detail-section {
+  margin-bottom: 16px;
+  background: white;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.detail-section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed var(--gray-200);
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 10px;
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.detail-key {
+  color: var(--gray-500);
+  font-size: 12px;
+}
+
+.detail-val {
+  color: var(--gray-800);
+  word-break: break-word;
+  white-space: pre-wrap;
+}
+
+.detail-val.empty {
+  color: var(--gray-400);
+  font-style: italic;
+}
+
+.detail-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--gray-400);
+}
+
+.empty-state-icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--gray-400);
+}
+
+/* API 配置提示 */
+.api-config-banner {
+  background: #eff6ff;
+  border: 1px solid #93c5fd;
+  border-left: 4px solid var(--primary);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: var(--gray-700);
+}
+
+.api-config-banner code {
+  background: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: var(--primary-dark);
+}
+
+.api-config-banner.offline {
+  background: #fef3c7;
+  border-color: #fcd34d;
+  border-left-color: var(--warning);
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- 顶部 Tab -->
+  <div class="top-tabs">
+    <button class="tab-btn active" data-tab="fill">📝 填写问卷</button>
+    <button class="tab-btn" data-tab="admin">📂 问卷管理 (<span id="adminCount">0</span>)</button>
+  </div>
+
+  <div class="tab-pane active" id="tab-fill">
+    <div class="header">
+      <h1>📋 MOZI企创赛 · 制造业方向</h1>
+      <div class="subtitle">深访问卷填答表 — 制造企业技术人才招聘困境与能力评价</div>
+      <div class="meta">
+        <span>⏱ 预计 30-40 分钟</span>
+        <span>🔒 匿名保密</span>
+        <span>📚 学术研究</span>
+      </div>
+    </div>
+
+  <div class="progress-bar">
+    <div class="progress-info">
+      <span id="progressText">已填写 0 / 0</span>
+      <span id="progressPercent">0%</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+  </div>
+
+  <div class="notice">
+    <h3>📝 填写说明（请务必先读）</h3>
+    <ol>
+      <li>本表为开放式提纲，您可凭实际经验自由填写，不必逐字照抄；</li>
+      <li>每题下方"您的看法"区域，写得越具体越好——哪怕一个失败/成功的小例子、一个数字，都对我们极其重要；</li>
+      <li>表头带 ☐ 的为勾选题，请在选择项前打钩；如某题不适用您的岗位，可标注"不适用"跳过；</li>
+      <li>所有答案无对错之分，请放心畅谈。</li>
+    </ol>
+  </div>
+
+  <form id="surveyForm">
+
+    <div class="section" data-section="basic">
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <div class="section-title">受访者基本信息</div>
+      </div>
+
+      <div class="section-desc">① 受访与登记信息（由记录人填写或受访者自填）</div>
+
+      <div class="question">
+        <label class="q-label">
+          <span class="q-tag">基本信息</span>
+          访谈编号
+        </label>
+        <input type="text" name="interview_id" placeholder="无需填写（系统自动生成）" disabled>
+      </div>
+
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag">基本信息</span>
+          记录日期 / 记录人
+        </label>
+        <input type="text" name="record_info" placeholder="例：2026-09-14 / 张三（本次访谈成员）" required>
+      </div>
+
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag req">单选</span>
+          访谈形式
+        </label>
+        <div class="options" data-name="interview_format" data-type="radio">
+          <label class="option">
+            <input type="radio" name="interview_format" value="面对面" required>
+            <span class="option-text">面对面</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="interview_format" value="电话">
+            <span class="option-text">电话</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="interview_format" value="视频">
+            <span class="option-text">视频</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="interview_format" value="文字填写">
+            <span class="option-text">文字填写</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag">基本信息</span>
+          公司名称
+        </label>
+        <input type="text" name="company_name" placeholder="请填写所在企业全称" required>
+      </div>
+
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag req">单选</span>
+          公司性质
+        </label>
+        <div class="options" data-name="company_type" data-type="radio">
+          <label class="option">
+            <input type="radio" name="company_type" value="国企" required>
+            <span class="option-text">国企</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="company_type" value="民企">
+            <span class="option-text">民企</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="company_type" value="外企">
+            <span class="option-text">外企</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="company_type" value="高校成果转化">
+            <span class="option-text">高校成果转化</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="company_type" value="其他" data-other>
+            <span class="option-text">其他</span>
+          </label>
+          <input type="text" class="option-other" name="company_type_other" placeholder="请说明">
+        </div>
+      </div>
+
+      <div class="question">
+        <label class="q-label">
+          <span class="q-tag">基本信息</span>
+          主要产品（主营）
+        </label>
+        <input type="text" name="main_product" placeholder="一句话概述主营业务">
+      </div>
+
+      <div class="question">
+        <label class="q-label">
+          <span class="q-tag">基本信息</span>
+          受访者姓名
+        </label>
+        <input type="text" name="respondent_name" placeholder="可匿名，仅内部记录用">
+      </div>
+
+      <div class="question">
+        <label class="q-label">
+          <span class="q-tag">基本信息</span>
+          受访者部门及职位
+        </label>
+        <input type="text" name="respondent_position" placeholder="例：技术总监、HR 经理">
+      </div>
+
+      <div class="section-desc">② 统一变量（V1-V10）— 请按括号内给定选项勾选，便于跨团队合并分析</div>
+
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag var">V1</span>
+          行业
+          <span class="q-hint">公司所属细分行业（如：汽车零部件 / 精密机械 / 电子制造 / 高端装备……）</span>
+        </label>
+        <input type="text" name="V1_industry" placeholder="请填写行业细分领域" required>
+      </div>
+
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag var">V2</span>
+          规模
+        </label>
+        <div class="options" data-name="V2_scale" data-type="radio">
+          <label class="option">
+            <input type="radio" name="V2_scale" value="≤50人" required>
+            <span class="option-text">≤50 人</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V2_scale" value="50-300人">
+            <span class="option-text">50-300 人</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V2_scale" value="300-1000人">
+            <span class="option-text">300-1000 人</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V2_scale" value=">1000人">
+            <span class="option-text">>1000 人</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag var">V3</span>
+          职位
+        </label>
+        <div class="options" data-name="V3_position" data-type="radio">
+          <label class="option">
+            <input type="radio" name="V3_position" value="老板/决策层" required>
+            <span class="option-text">老板 / 决策层</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V3_position" value="高管">
+            <span class="option-text">高管</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V3_position" value="部门负责人">
+            <span class="option-text">部门负责人</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V3_position" value="主管">
+            <span class="option-text">主管</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V3_position" value="一线岗位">
+            <span class="option-text">一线岗位</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag var">V4 最重要</span>
+          决策角色
+        </label>
+        <div class="options" data-name="V4_role" data-type="radio">
+          <label class="option">
+            <input type="radio" name="V4_role" value="看得见人选能力的用人部门" required>
+            <span class="option-text">能"看得见人选能力"的用人部门</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V4_role" value="有采购拍板权">
+            <span class="option-text">有"采购拍板权"的人</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V4_role" value="两者兼有">
+            <span class="option-text">两者兼有</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag var">V5</span>
+          招聘时近度
+        </label>
+        <div class="options" data-name="V5_recency" data-type="radio">
+          <label class="option">
+            <input type="radio" name="V5_recency" value="A 12个月内" required>
+            <span class="option-text">A 12 个月内</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V5_recency" value="B 13-24个月">
+            <span class="option-text">B 13-24 个月</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V5_recency" value="C 24个月以上且有案例">
+            <span class="option-text">C 24 个月以上且有案例</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V5_recency" value="D 从未">
+            <span class="option-text">D 从未</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="question">
+        <label class="q-label">
+          <span class="q-tag var">V6</span>
+          评估人数
+          <span class="q-hint">一次招聘通常几人参与评估（填数字）</span>
+        </label>
+        <input type="number" name="V6_evaluators" placeholder="例：3" min="1">
+      </div>
+
+      <div class="question">
+        <label class="q-label">
+          <span class="q-tag var">V7</span>
+          团队标识（控制变量）
+        </label>
+        <input type="text" name="V7_team" placeholder="无需填写" disabled>
+      </div>
+
+      <div class="question">
+        <label class="q-label">
+          <span class="q-tag var">V8</span>
+          时间
+          <span class="q-hint">本次访谈 / 填写时间</span>
+        </label>
+        <input type="datetime-local" name="V8_time">
+      </div>
+
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag var">V9</span>
+          渠道
+        </label>
+        <div class="options" data-name="V9_channel" data-type="radio">
+          <label class="option">
+            <input type="radio" name="V9_channel" value="校友" required>
+            <span class="option-text">校友</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V9_channel" value="导师引荐">
+            <span class="option-text">导师引荐</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V9_channel" value="实习单位">
+            <span class="option-text">实习单位</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V9_channel" value="亲友企业">
+            <span class="option-text">亲友企业</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V9_channel" value="行业社群">
+            <span class="option-text">行业社群</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V9_channel" value="其他" data-other>
+            <span class="option-text">其他</span>
+          </label>
+          <input type="text" class="option-other" name="V9_channel_other" placeholder="请说明">
+        </div>
+      </div>
+
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag var">V10</span>
+          岗位
+        </label>
+        <div class="options" data-name="V10_job" data-type="radio">
+          <label class="option">
+            <input type="radio" name="V10_job" value="工艺" required>
+            <span class="option-text">工艺</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V10_job" value="设备">
+            <span class="option-text">设备</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V10_job" value="质量">
+            <span class="option-text">质量</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V10_job" value="装配调试">
+            <span class="option-text">装配调试</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V10_job" value="电气">
+            <span class="option-text">电气</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="V10_job" value="其他工程师" data-other>
+            <span class="option-text">其他工程师</span>
+          </label>
+          <input type="text" class="option-other" name="V10_job_other" placeholder="请说明">
+        </div>
+      </div>
+    </div>
+
+    <div class="section" data-section="interview">
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <div class="section-title">深访提纲</div>
+      </div>
+      <div class="section-desc">💡 提示：以下问题均为开放式，您的回答越具体（包含例子、数字、场景），对我们研究越有价值。每题包含「要点拆解 + 核心追问 + 详细回答」三个必填部分。</div>
+
+      <!-- Q1 -->
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag">Q1</span>
+          贵公司技术岗目前主要招聘哪些岗位？每年大约新招多少人？
+        </label>
+        <div class="q-hint">追问：其中是否有哪个岗位尤其难招到合适人选？</div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">① 招聘岗位拆解（可多选或自定义添加）</label>
+          <div id="q1_jobs_list" class="list-input">
+            <div class="job-row">
+              <input type="text" name="q1_jobs" placeholder="岗位1（如：机械工程师）" required>
+              <button type="button" class="row-remove" onclick="removeJobRow(this)" title="删除该岗位" disabled>×</button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-secondary" style="margin-top:8px;padding:6px 12px;font-size:13px;" onclick="addJobInput()">+ 添加岗位</button>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">② 核心追问 — 是否有特别难招的岗位？</label>
+          <input type="text" name="q1_core" placeholder="例：有，结构设计岗最缺，原因是…" required>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">③ 详细回答（包含数据/案例/场景）</label>
+          <textarea name="q1_view" placeholder="请详细描述：招聘规模、痛点、具体例子…" required></textarea>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">每年新招人数</label>
+          <input type="number" name="q1_headcount" placeholder="例：20" min="0" required>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag">Q2</span>
+          请您回忆最近一次招聘技术岗的情况：当时主要依据哪些方面进行筛选和决策？
+        </label>
+        <div class="q-hint">追问：在您看来，其中哪一条是您个人最看重的？为什么？</div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">① 筛选与决策依据拆解（可添加多条）</label>
+          <div id="q2_basis_list" class="list-input">
+            <div class="job-row">
+              <input type="text" name="q2_basis" placeholder="依据1（如：项目经历匹配度）" required>
+              <button type="button" class="row-remove" onclick="removeRow(this, 'q2_basis_list')" title="删除该条" disabled>×</button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-secondary" style="margin-top:8px;padding:6px 12px;font-size:13px;" onclick="addRow('q2_basis_list', 'q2_basis', '依据')">+ 添加依据</button>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">② 核心追问 — 您个人最看重哪一条？为什么？</label>
+          <input type="text" name="q2_core" placeholder="例：项目经历匹配度最高，因为…" required>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">③ 详细回答（包含当时的具体场景）</label>
+          <textarea name="q2_view" placeholder="请详细描述那次招聘的过程、各环节的判断逻辑、最终录用结果…" required></textarea>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag">Q3</span>
+          长期来看，技术岗招聘成功率如何？是否出现过入职后不合适的案例？
+        </label>
+        <div class="q-hint">追问：原本依赖何种信号判断其胜任，结果为何判断失误？整个过程大概付出多大代价？</div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">① 招聘成功率评估（百分比）</label>
+          <input type="text" name="q3_rate" placeholder="例：约 60% / 不到一半 / 大部分都合适…" required>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">② 核心追问 — 入职后不合适的关键失误信号</label>
+          <input type="text" name="q3_core" placeholder="例：当时依赖简历项目经验判断，实际动手能力不足…" required>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">③ 详细回答（包含代价数据：再招时间/培训成本/项目延误等）</label>
+          <textarea name="q3_view" placeholder="请详细描述典型的失误案例、判断失误原因、付出的具体代价…" required></textarea>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag">Q4</span>
+          目前主要依靠哪些方式，确认候选人"确实具备真实能力"？
+        </label>
+        <div class="q-hint">追问：你们行业有没有被普遍认可的职业资格证书？实际招聘中参考价值多大？</div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">① 真实能力确认方式拆解（可添加多条）</label>
+          <div id="q4_methods_list" class="list-input">
+            <div class="job-row">
+              <input type="text" name="q4_methods" placeholder="方式1（如：实操考核 / 上机测试）" required>
+              <button type="button" class="row-remove" onclick="removeRow(this, 'q4_methods_list')" title="删除该条" disabled>×</button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-secondary" style="margin-top:8px;padding:6px 12px;font-size:13px;" onclick="addRow('q4_methods_list', 'q4_methods', '方式')">+ 添加方式</button>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">② 核心追问 — 行业资格证书及其参考价值</label>
+          <input type="text" name="q4_core" placeholder="例：行业有 X 证书，但实际招聘中参考价值一般…" required>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">③ 详细回答（各方式的有效性对比）</label>
+          <textarea name="q4_view" placeholder="请详细描述各种方式的有效程度、踩过的坑、是否有被识破的虚假经验…" required></textarea>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag">Q5</span>
+          在招聘环节，是否存在：贵司确实需要、应届毕业生也自认为已经具备的能力，但是难以证明的？
+        </label>
+        <div class="q-hint">追问：这类"需要但证明不了"的能力具体有哪些？目前贵司主要依靠何种方式间接判断以降低不确定性？</div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">① 难以证明的能力拆解（可添加多条）</label>
+          <div id="q5_abilities_list" class="list-input">
+            <div class="job-row">
+              <input type="text" name="q5_abilities" placeholder="能力1（如：跨部门沟通、抗压、责任心…）" required>
+              <button type="button" class="row-remove" onclick="removeRow(this, 'q5_abilities_list')" title="删除该条" disabled>×</button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-secondary" style="margin-top:8px;padding:6px 12px;font-size:13px;" onclick="addRow('q5_abilities_list', 'q5_abilities', '能力')">+ 添加能力</button>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">② 核心追问 — 间接判断方式有哪些？</label>
+          <input type="text" name="q5_core" placeholder="例：通过实习观察、行为面试题、试用期考核…" required>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">③ 详细回答（具体场景与不确定性如何降低）</label>
+          <textarea name="q5_view" placeholder="请详细描述这些软能力的识别困难、判断偏差、造成的损失…" required></textarea>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag">Q6</span>
+          请谈谈贵公司在制造岗位上，使用应届毕业生/职场新人时，哪些能力是岗位非常看重、但以往相当一部分毕业生往往并不具备或明显欠缺的？
+        </label>
+        <div class="q-hint">追问：这类能力主要属于专业技术技能，还是软性职场素养（如解决问题、沟通协作、抗压、责任心）？请展开描述一下。</div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">① 毕业生明显欠缺的岗位能力拆解（可添加多条）</label>
+          <div id="q6_gaps_list" class="list-input">
+            <div class="job-row">
+              <input type="text" name="q6_gaps" placeholder="能力1（如：现场问题解决 / 工艺实操 / 安全意识…）" required>
+              <button type="button" class="row-remove" onclick="removeRow(this, 'q6_gaps_list')" title="删除该条" disabled>×</button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-secondary" style="margin-top:8px;padding:6px 12px;font-size:13px;" onclick="addRow('q6_gaps_list', 'q6_gaps', '能力')">+ 添加能力</button>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">② 核心追问 — 偏专业技术技能还是软性职场素养？</label>
+          <input type="text" name="q6_core" placeholder="例：以软性素养为主，如沟通协作、抗压、责任心…" required>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">③ 详细回答（具体案例：哪些毕业生因哪些能力不足被淘汰/延期转正）</label>
+          <textarea name="q6_view" placeholder="请详细描述校招与新人培养过程中遇到的典型问题…" required></textarea>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag">Q7</span>
+          在不涉及机密的前提下，你们技术岗的实操能力通常沉淀成哪些可见成果（图纸、代码、工艺方案、检测数据等）？
+        </label>
+        <div class="q-hint">追问：这些成果能脱敏给外部在线核验吗？若不能，用什么替代证据（匿名项目经验、技能实操考核）更靠谱？目前有没有环节已在用这类证据筛人选人？效果如何？</div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">① 可见成果类型拆解（可添加多条）</label>
+          <div id="q7_outputs_list" class="list-input">
+            <div class="job-row">
+              <input type="text" name="q7_outputs" placeholder="成果1（如：项目图纸 / 工艺方案 / 检测报告 / 代码…）" required>
+              <button type="button" class="row-remove" onclick="removeRow(this, 'q7_outputs_list')" title="删除该条" disabled>×</button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-secondary" style="margin-top:8px;padding:6px 12px;font-size:13px;" onclick="addRow('q7_outputs_list', 'q7_outputs', '成果')">+ 添加成果</button>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">② 核心追问 — 替代证据与现有核验机制</label>
+          <input type="text" name="q7_core" placeholder="例：目前靠 X 替代证据，效果 Y…" required>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">③ 详细回答（脱敏难度、替代证据类型、效果数据）</label>
+          <textarea name="q7_view" placeholder="请详细描述实操能力如何量化、是否有外部核验机制、效果如何…" required></textarea>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag">Q8</span>
+          若市场上出现第三方发布、可在线核验的"能力护照"，能证明候选人真实实操能力，贵司招聘时愿意采用吗？
+        </label>
+        <div class="q-hint">
+          追问 1：愿意/不愿意的原因？是关键疑点还是信任点？<br>
+          追问 2：由谁背书（政府、行业协会、头部企业、第三方机构）才更信任？<br>
+          追问 3：最想先用它的是哪个岗位？该岗位目前招聘最难、最想被替代的环节是哪一步？
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">① 是否愿意采用</label>
+          <div class="options" data-name="q8_willing" data-type="radio">
+            <label class="option">
+              <input type="radio" name="q8_willing" value="愿意" required>
+              <span class="option-text">愿意</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q8_willing" value="不愿意">
+              <span class="option-text">不愿意</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="q8_willing" value="看情况">
+              <span class="option-text">看情况</span>
+            </label>
+          </div>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">② 核心追问 — 由谁背书才更信任？（可多选/添加）</label>
+          <div id="q8_endorse_list" class="list-input">
+            <div class="job-row">
+              <input type="text" name="q8_endorse" placeholder="背书方1（政府/行业协会/头部企业/第三方）" required>
+              <button type="button" class="row-remove" onclick="removeRow(this, 'q8_endorse_list')" title="删除该条" disabled>×</button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-secondary" style="margin-top:8px;padding:6px 12px;font-size:13px;" onclick="addRow('q8_endorse_list', 'q8_endorse', '背书方')">+ 添加背书方</button>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">③ 核心追问 — 最想先用的岗位及最想替代的环节</label>
+          <input type="text" name="q8_core" placeholder="例：最想用在工艺岗，替代试用期前的实操考核环节…" required>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">④ 详细回答（信任点 / 疑点 / 落地路径）</label>
+          <textarea name="q8_view" placeholder="请详细描述愿意/不愿意的核心理由、对背书方的要求、对落地场景的设想…" required></textarea>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag">Q9</span>
+          若确实考虑采用此类工具，公司内由谁率先提议"可以采用"，最终谁拥有拍板与审批权？
+        </label>
+        <div class="q-hint">追问：决策主体是人力资源部门、技术负责人，还是最高管理者？</div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">① 决策主体拆解（可添加多条角色）</label>
+          <div id="q9_deciders_list" class="list-input">
+            <div class="job-row">
+              <input type="text" name="q9_deciders" placeholder="角色1（如：HR 负责人 / 技术总监 / 总经理…）" required>
+              <button type="button" class="row-remove" onclick="removeRow(this, 'q9_deciders_list')" title="删除该条" disabled>×</button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-secondary" style="margin-top:8px;padding:6px 12px;font-size:13px;" onclick="addRow('q9_deciders_list', 'q9_deciders', '角色')">+ 添加角色</button>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">② 核心追问 — 谁最先提议？谁最终拍板？</label>
+          <input type="text" name="q9_core" placeholder="例：HR 提议、技术负责人评估、总经理最终拍板…" required>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">③ 详细回答（决策流程、内部博弈、过往类似工具的引入经验）</label>
+          <textarea name="q9_view" placeholder="请详细描述内部决策流程、可能的阻力、过往类似工具（如 SaaS / 测评）的引入经验…" required></textarea>
+        </div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="question required">
+        <label class="q-label">
+          <span class="q-tag">Q10</span>
+          除上述内容外，是否还有其他涉及招聘或能力评价、但尚未提及且您认为重要的方面？
+        </label>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">① 补充议题拆解（可添加多条）</label>
+          <div id="q10_topics_list" class="list-input">
+            <div class="job-row">
+              <input type="text" name="q10_topics" placeholder="议题1（如：雇主品牌 / 校企合作 / 内部培养体系…）" required>
+              <button type="button" class="row-remove" onclick="removeRow(this, 'q10_topics_list')" title="删除该条" disabled>×</button>
+            </div>
+          </div>
+          <button type="button" class="btn btn-secondary" style="margin-top:8px;padding:6px 12px;font-size:13px;" onclick="addRow('q10_topics_list', 'q10_topics', '议题')">+ 添加议题</button>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">② 核心追问 — 该议题为何重要？</label>
+          <input type="text" name="q10_core" placeholder="例：雇主品牌直接影响候选人质量，但常被忽视…" required>
+        </div>
+        <div class="sub-q">
+          <label class="q-label" style="font-size:13px;color:var(--gray-600);">③ 详细回答（具体案例 / 数据 / 期望改善的环节）</label>
+          <textarea name="q10_view" placeholder="请详细描述这些被忽视的方面、您的具体观察与建议…" required></textarea>
+        </div>
+      </div>
+
+      <div class="consent">
+        <strong>🔒 授权与保密承诺</strong>
+        <p style="margin-top:8px;">本表仅用于本次学术研究，我们将对您及您所在公司的信息进行匿名化处理并严格保密，所有数据仅以统计形式呈现，不对外披露任何可识别到个人或公司的信息。</p>
+        <label>
+          <input type="checkbox" name="consent" required>
+          <span>我已阅读并同意上述授权与保密承诺</span>
+        </label>
+      </div>
+    </div>
+
+  </form>
+
+  <div class="actions">
+    <button type="button" class="btn btn-secondary" onclick="window.print()">🖨 打印 / 导出 PDF</button>
+    <button type="button" class="btn btn-secondary" onclick="exportJSON()">💾 导出 JSON 数据</button>
+    <button type="button" class="btn btn-secondary" onclick="resetForm()">🔄 清空重填</button>
+    <button type="button" class="btn btn-primary" onclick="previewData()">👁 预览数据</button>
+    <button type="submit" form="surveyForm" class="btn btn-success">✅ 提交问卷</button>
+  </div>
+
+  </div><!-- /tab-fill -->
+
+  <!-- ===== 管理面板 ===== -->
+  <div class="tab-pane" id="tab-admin">
+    <div class="admin-panel">
+      <div id="apiBanner" class="api-config-banner">
+        ⏳ 正在连接后端 API…
+      </div>
+
+      <div class="admin-header">
+        <div class="admin-title">📂 已收集问卷</div>
+        <div class="admin-actions">
+          <button type="button" class="btn btn-secondary" onclick="loadSurveys()">🔄 刷新</button>
+          <button type="button" class="btn btn-primary" onclick="exportAll()">📥 导出全部</button>
+          <button type="button" class="btn btn-secondary" style="color:var(--danger);border-color:var(--danger);" onclick="clearAllSurveys()">🗑 清空全部</button>
+        </div>
+      </div>
+
+      <!-- 统计卡片 -->
+      <div class="stats-grid" id="statsGrid">
+        <div class="stat-card"><div class="stat-value" id="statTotal">-</div><div class="stat-label">已收集</div></div>
+        <div class="stat-card"><div class="stat-value" id="statAvg">-</div><div class="stat-label">平均完成率</div></div>
+        <div class="stat-card"><div class="stat-value" id="statCompany">-</div><div class="stat-label">公司数</div></div>
+        <div class="stat-card"><div class="stat-value" id="statJob">-</div><div class="stat-label">覆盖岗位</div></div>
+      </div>
+
+      <!-- 筛选 -->
+      <div class="filter-bar">
+        <input type="text" id="filterQ" placeholder="🔍 搜索 公司名 / 受访者 / 编号">
+        <select id="filterScale">
+          <option value="">全部规模</option>
+          <option value="≤50人">≤50 人</option>
+          <option value="50-300人">50-300 人</option>
+          <option value="300-1000人">300-1000 人</option>
+          <option value=">1000人">>1000 人</option>
+        </select>
+        <select id="filterJob">
+          <option value="">全部岗位</option>
+          <option value="工艺">工艺</option>
+          <option value="设备">设备</option>
+          <option value="质量">质量</option>
+          <option value="装配调试">装配调试</option>
+          <option value="电气">电气</option>
+        </select>
+        <button class="btn btn-primary" style="padding:8px 16px;" onclick="loadSurveys()">查询</button>
+      </div>
+
+      <!-- 列表 -->
+      <div id="surveyListContainer">
+        <div class="loading">加载中…</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<div class="modal" id="previewModal">
+  <div class="modal-content">
+    <div class="modal-title">📋 问卷数据预览</div>
+    <pre id="previewContent" style="background:var(--gray-50);padding:16px;border-radius:8px;font-size:12px;max-height:50vh;overflow-y:auto;white-space:pre-wrap;word-break:break-all;"></pre>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-secondary" onclick="closeModal()">关闭</button>
+      <button type="button" class="btn btn-primary" onclick="exportJSON()">导出 JSON</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== API 配置 =====
+const API_BASE = (() => {
+  // 自动检测：同源部署用相对路径，跨域可手动改这里
+  const url = new URL(window.location.href);
+  // 如果是 file:// 协议打开（直接双击 HTML），给出本地默认地址
+  if (url.protocol === 'file:') {
+    return 'http://localhost:3000';
+  }
+  return url.origin;
+})();
+
+let formData = {};
+let radioChecked = {};
+let apiOnline = false;
+let allSurveys = [];
+
+// ===== Tab 切换 =====
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const tab = btn.dataset.tab;
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b === btn));
+    document.querySelectorAll('.tab-pane').forEach(p => p.classList.toggle('active', p.id === 'tab-' + tab));
+    if (tab === 'admin') checkApiAndLoad();
+  });
+});
+
+// ===== API 健康检查 =====
+async function checkApiAndLoad() {
+  const banner = document.getElementById('apiBanner');
+  banner.className = 'api-config-banner';
+  banner.innerHTML = '⏳ 正在连接后端 API…';
+  try {
+    const r = await fetch(API_BASE + '/api/health');
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const j = await r.json();
+    apiOnline = true;
+    banner.className = 'api-config-banner';
+    banner.innerHTML = `✅ 后端已连接 — <code>${API_BASE}</code> &nbsp;·&nbsp; 服务时间 ${new Date(j.time).toLocaleString('zh-CN')}`;
+    loadSurveys();
+    loadStats();
+  } catch (e) {
+    apiOnline = false;
+    banner.className = 'api-config-banner offline';
+    banner.innerHTML = `⚠️ 无法连接后端 API（<code>${API_BASE}</code>）<br>请确认后端已启动：<code>node server.js</code><br>错误信息：${e.message}`;
+    document.getElementById('surveyListContainer').innerHTML = `<div class="empty-state"><div class="empty-state-icon">🔌</div>后端未连接，无法加载问卷列表</div>`;
+  }
+}
+
+// ===== 列表加载 =====
+async function loadSurveys() {
+  if (!apiOnline) return checkApiAndLoad();
+  const q = document.getElementById('filterQ').value;
+  const scale = document.getElementById('filterScale').value;
+  const job = document.getElementById('filterJob').value;
+  const params = new URLSearchParams();
+  if (q) params.set('q', q);
+  if (scale) params.set('scale', scale);
+  if (job) params.set('job', job);
+
+  document.getElementById('surveyListContainer').innerHTML = '<div class="loading">加载中…</div>';
+  try {
+    const r = await fetch(API_BASE + '/api/surveys?' + params.toString());
+    const j = await r.json();
+    allSurveys = j.rows || [];
+    document.getElementById('adminCount').textContent = j.total || 0;
+    renderSurveyList(allSurveys);
+  } catch (e) {
+    document.getElementById('surveyListContainer').innerHTML = `<div class="empty-state"><div class="empty-state-icon">❌</div>加载失败：${e.message}</div>`;
+  }
+}
+
+function renderSurveyList(rows) {
+  const container = document.getElementById('surveyListContainer');
+  if (!rows.length) {
+    container.innerHTML = `<div class="empty-state"><div class="empty-state-icon">📭</div>暂无问卷数据<br><small style="color:var(--gray-400);">完成问卷后会自动提交到这里</small></div>`;
+    return;
+  }
+  container.innerHTML = '<div class="survey-list">' + rows.map(r => {
+    const date = new Date(r.submitted_at).toLocaleString('zh-CN', { hour12: false });
+    const rate = r.completion_rate || 0;
+    const rateCls = rate < 50 ? 'low' : (rate < 80 ? 'mid' : '');
+    return `
+      <div class="survey-card" data-id="${r.id}" data-no="${r.interview_no}">
+        <div class="survey-row">
+          <span class="survey-no">${r.interview_no}</span>
+          <span class="survey-company">${escapeHtml(r.company_name || '(未填公司)')}</span>
+          <div class="survey-meta">
+            <span>🏭 ${escapeHtml(r.company_type || '-')}</span>
+            <span>👥 ${escapeHtml(r.v2_scale || '-')}</span>
+            <span>🔧 ${escapeHtml(r.v10_job || '-')}</span>
+            <span>🕒 ${date}</span>
+          </div>
+          <div class="survey-rate">
+            <div class="rate-bar"><div class="rate-fill ${rateCls}" style="width:${rate}%"></div></div>
+            <span style="color:var(--gray-500);font-size:11px;">${rate}%</span>
+          </div>
+          <button class="survey-toggle" onclick="toggleDetail(this)" title="展开详情">▾</button>
+        </div>
+        <div class="survey-detail" id="detail-${r.id}"></div>
+      </div>
+    `;
+  }).join('') + '</div>';
+}
+
+async function toggleDetail(btn) {
+  const card = btn.closest('.survey-card');
+  const detailEl = document.getElementById('detail-' + card.dataset.id);
+  if (card.classList.contains('expanded')) {
+    card.classList.remove('expanded');
+    btn.textContent = '▾';
+    return;
+  }
+  card.classList.add('expanded');
+  btn.textContent = '▴';
+  if (!detailEl.dataset.loaded) {
+    detailEl.innerHTML = '<div class="loading">加载详情…</div>';
+    try {
+      const r = await fetch(API_BASE + '/api/surveys/' + card.dataset.id);
+      const row = await r.json();
+      detailEl.innerHTML = renderDetail(row);
+      detailEl.dataset.loaded = '1';
+    } catch (e) {
+      detailEl.innerHTML = `<div class="empty-state">加载失败：${e.message}</div>`;
+    }
+  }
+}
+
+function renderDetail(row) {
+  const p = row.payload || {};
+  const sections = [
+    {
+      title: '① 受访与登记信息',
+      rows: [
+        ['访谈编号', p.interview_id],
+        ['记录日期 / 记录人', p.record_info],
+        ['访谈形式', p.interview_format],
+        ['公司名称', p.company_name],
+        ['公司性质', p.company_type + (p.company_type_other ? `（${p.company_type_other}）` : '')],
+        ['主要产品', p.main_product],
+        ['受访者姓名', p.respondent_name],
+        ['部门及职位', p.respondent_position],
+      ]
+    },
+    {
+      title: '② 统一变量 (V1-V10)',
+      rows: [
+        ['V1 行业', p.V1_industry],
+        ['V2 规模', p.V2_scale],
+        ['V3 职位', p.V3_position],
+        ['V4 决策角色', p.V4_role],
+        ['V5 招聘时近度', p.V5_recency],
+        ['V6 评估人数', p.V6_evaluators],
+        ['V8 时间', p.V8_time],
+        ['V9 渠道', p.V9_channel + (p.V9_channel_other ? `（${p.V9_channel_other}）` : '')],
+        ['V10 岗位', (Array.isArray(p.V10_job) ? p.V10_job.join('、') : p.V10_job) + (p.V10_job_other ? `（${p.V10_job_other}）` : '')],
+      ]
+    },
+    {
+      title: 'Q1 招聘岗位与人数',
+      rows: [
+        ['招聘岗位', formatList(p.q1_jobs)],
+        ['每年新招人数', p.q1_headcount],
+        ['核心追问', p.q1_core],
+        ['详细回答', p.q1_view],
+      ]
+    },
+    {
+      title: 'Q2 招聘筛选依据',
+      rows: [
+        ['筛选依据', formatList(p.q2_basis)],
+        ['核心追问', p.q2_core],
+        ['详细回答', p.q2_view],
+      ]
+    },
+    {
+      title: 'Q3 招聘成功率与失误',
+      rows: [
+        ['成功率', p.q3_rate],
+        ['核心追问（失误信号）', p.q3_core],
+        ['详细回答（代价）', p.q3_view],
+      ]
+    },
+    {
+      title: 'Q4 真实能力确认方式',
+      rows: [
+        ['确认方式', formatList(p.q4_methods)],
+        ['核心追问（资格证书）', p.q4_core],
+        ['详细回答', p.q4_view],
+      ]
+    },
+    {
+      title: 'Q5 难以证明的能力',
+      rows: [
+        ['能力拆解', formatList(p.q5_abilities)],
+        ['核心追问（间接判断）', p.q5_core],
+        ['详细回答', p.q5_view],
+      ]
+    },
+    {
+      title: 'Q6 毕业生欠缺的能力',
+      rows: [
+        ['能力拆解', formatList(p.q6_gaps)],
+        ['核心追问（技术 vs 软素养）', p.q6_core],
+        ['详细回答', p.q6_view],
+      ]
+    },
+    {
+      title: 'Q7 实操成果与脱敏核验',
+      rows: [
+        ['可见成果', formatList(p.q7_outputs)],
+        ['核心追问（替代证据）', p.q7_core],
+        ['详细回答', p.q7_view],
+      ]
+    },
+    {
+      title: 'Q8 能力护照意愿',
+      rows: [
+        ['是否愿意', p.q8_willing],
+        ['背书方', formatList(p.q8_endorse)],
+        ['核心追问（最想用的岗位）', p.q8_core],
+        ['详细回答', p.q8_view],
+      ]
+    },
+    {
+      title: 'Q9 内部决策主体',
+      rows: [
+        ['决策主体', formatList(p.q9_deciders)],
+        ['核心追问（提议与拍板）', p.q9_core],
+        ['详细回答', p.q9_view],
+      ]
+    },
+    {
+      title: 'Q10 其他重要方面',
+      rows: [
+        ['补充议题', formatList(p.q10_topics)],
+        ['核心追问', p.q10_core],
+        ['详细回答', p.q10_view],
+      ]
+    },
+  ];
+
+  return `
+    ${sections.map(s => `
+      <div class="detail-section">
+        <div class="detail-section-title">${s.title}</div>
+        ${s.rows.map(([k, v]) => `
+          <div class="detail-row">
+            <div class="detail-key">${k}</div>
+            <div class="detail-val ${isEmpty(v) ? 'empty' : ''}">${isEmpty(v) ? '（未填写）' : escapeHtml(v)}</div>
+          </div>
+        `).join('')}
+      </div>
+    `).join('')}
+    <div class="detail-actions">
+      <button class="btn btn-secondary" onclick='downloadOne(${JSON.stringify(row).replace(/'/g, "&apos;")})'>📥 导出本份 JSON</button>
+      <button class="btn btn-secondary" style="color:var(--danger);border-color:var(--danger);" onclick="deleteOne('${row.id}')">🗑 删除本份</button>
+    </div>
+  `;
+}
+
+function formatList(v) {
+  if (!v) return '';
+  if (Array.isArray(v)) return v.filter(x => x && String(x).trim()).join('、');
+  return String(v);
+}
+
+function isEmpty(v) {
+  if (v === null || v === undefined) return true;
+  if (typeof v === 'string') return !v.trim();
+  if (Array.isArray(v)) return v.every(x => !x || !String(x).trim());
+  return false;
+}
+
+function escapeHtml(s) {
+  if (s === null || s === undefined) return '';
+  return String(s)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+}
+
+async function loadStats() {
+  if (!apiOnline) return;
+  try {
+    const r = await fetch(API_BASE + '/api/stats');
+    const j = await r.json();
+    document.getElementById('statTotal').textContent = j.total || 0;
+    document.getElementById('statAvg').textContent = (j.avg_completion || 0) + '%';
+    const companySet = new Set(allSurveys.map(s => s.company_name).filter(Boolean));
+    document.getElementById('statCompany').textContent = companySet.size;
+    const jobSet = new Set();
+    allSurveys.forEach(s => {
+      (s.v10_job || '').split(/[,、]/).forEach(j => { if (j.trim()) jobSet.add(j.trim()); });
+    });
+    document.getElementById('statJob').textContent = jobSet.size;
+  } catch (e) {
+    console.error('加载统计失败', e);
+  }
+}
+
+function downloadOne(row) {
+  const blob = new Blob([JSON.stringify(row, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `MOZI问卷_${row.interview_no}.json`;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast('已导出', 'success');
+}
+
+async function deleteOne(id) {
+  if (!confirm('确定删除这份问卷吗？此操作不可撤销。')) return;
+  try {
+    await fetch(API_BASE + '/api/surveys/' + id, { method: 'DELETE' });
+    showToast('已删除', 'success');
+    loadSurveys();
+    loadStats();
+  } catch (e) {
+    showToast('删除失败：' + e.message, 'error');
+  }
+}
+
+async function clearAllSurveys() {
+  if (!confirm('⚠️ 确认清空所有问卷数据？\n\n此操作不可恢复！建议先导出全部备份。')) return;
+  if (!confirm('再次确认：真的要清空全部数据吗？')) return;
+  try {
+    await fetch(API_BASE + '/api/surveys?confirm=YES', { method: 'DELETE' });
+    showToast('已清空全部', 'success');
+    loadSurveys();
+    loadStats();
+  } catch (e) {
+    showToast('清空失败：' + e.message, 'error');
+  }
+}
+
+function exportAll() {
+  window.open(API_BASE + '/api/export', '_blank');
+}
+</script>
+
+function showToast(msg, type = '') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast show ' + type;
+  setTimeout(() => t.className = 'toast', 2500);
+}
+
+function addJobInput() {
+  addRow('q1_jobs_list', 'q1_jobs', '岗位', '岗位1（如：机械工程师）');
+}
+
+function addRow(listId, name, label, firstPlaceholder) {
+  const list = document.getElementById(listId);
+  const idx = list.children.length + 1;
+  const placeholder = firstPlaceholder || (idx === 1 ? `${label}1` : `${label}${idx}`);
+  const row = document.createElement('div');
+  row.className = 'job-row';
+  row.innerHTML = `
+    <input type="text" name="${name}" placeholder="${placeholder}" required>
+    <button type="button" class="row-remove" onclick="removeRow(this, '${listId}')" title="删除该条">×</button>
+  `;
+  list.appendChild(row);
+  updateRemoveButtons(listId);
+  row.querySelector('input').focus();
+}
+
+function removeJobRow(btn) {
+  removeRow(btn, 'q1_jobs_list');
+}
+
+function removeRow(btn, listId) {
+  const row = btn.closest('.job-row');
+  if (!row) return;
+  const list = document.getElementById(listId);
+  if (list.children.length <= 1) return;
+  row.remove();
+  refreshRowPlaceholders(listId);
+  updateRemoveButtons(listId);
+}
+
+function refreshRowPlaceholders(listId) {
+  const list = document.getElementById(listId);
+  if (!list) return;
+  Array.from(list.children).forEach((row, i) => {
+    const input = row.querySelector('input');
+    if (input && !input.value.trim()) {
+      const ph = input.placeholder;
+      // 只刷新纯 "岗位N/依据N/方式N..." 这类纯数字占位符
+      const m = ph.match(/^(岗位|依据|方式|能力|成果|背书方|角色|议题)(\d+.*)$/);
+      if (m) {
+        input.placeholder = `${m[1]}${i + 1}${i === 0 && m[1] === '岗位' ? '（如：机械工程师）' : ''}`;
+      }
+    }
+  });
+}
+
+function updateRemoveButtons(listId) {
+  if (listId) {
+    const list = document.getElementById(listId);
+    if (!list) return;
+    const rows = list.querySelectorAll('.job-row');
+    rows.forEach((row) => {
+      const btn = row.querySelector('.row-remove');
+      if (btn) {
+        btn.disabled = rows.length === 1;
+        btn.style.opacity = rows.length === 1 ? '0.3' : '1';
+        btn.style.cursor = rows.length === 1 ? 'not-allowed' : 'pointer';
+      }
+    });
+    return;
+  }
+  // 不传 listId 时，刷新所有 .list-input
+  document.querySelectorAll('.list-input').forEach(list => {
+    const rows = list.querySelectorAll('.job-row');
+    rows.forEach((row) => {
+      const btn = row.querySelector('.row-remove');
+      if (btn) {
+        btn.disabled = rows.length === 1;
+        btn.style.opacity = rows.length === 1 ? '0.3' : '1';
+        btn.style.cursor = rows.length === 1 ? 'not-allowed' : 'pointer';
+      }
+    });
+  });
+}
+
+function updateProgress() {
+  const required = document.querySelectorAll('[required]');
+  let filled = 0, total = required.length;
+  radioChecked = {};
+
+  required.forEach(el => {
+    if (el.type === 'radio') {
+      const name = el.name;
+      if (document.querySelector(`input[name="${name}"]:checked`)) {
+        if (!radioChecked[name]) {
+          filled++;
+          radioChecked[name] = true;
+        }
+      }
+    } else if (el.type === 'checkbox') {
+      if (el.checked) filled++;
+    } else if (el.value.trim()) {
+      filled++;
+    }
+  });
+
+  const percent = total > 0 ? Math.round((filled / total) * 100) : 0;
+  document.getElementById('progressText').textContent = `已填写 ${filled} / ${total}`;
+  document.getElementById('progressPercent').textContent = `${percent}%`;
+  document.getElementById('progressFill').style.width = `${percent}%`;
+}
+
+document.addEventListener('change', (e) => {
+  const target = e.target;
+
+  if (target.matches('.option input[type="radio"], .option input[type="checkbox"]')) {
+    const option = target.closest('.option');
+    if (option) option.classList.add('checked');
+
+    if (target.type === 'radio') {
+      const name = target.name;
+      document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+        const opt = r.closest('.option');
+        if (opt && r !== target) opt.classList.remove('checked');
+      });
+    }
+
+    if (target.dataset.other !== undefined) {
+      const container = target.closest('.options');
+      const otherInput = container.querySelector('.option-other');
+      if (target.checked) otherInput.classList.add('visible');
+      else otherInput.classList.remove('visible');
+    }
+  }
+
+  updateProgress();
+});
+
+document.addEventListener('input', updateProgress);
+
+function collectData() {
+  const form = document.getElementById('surveyForm');
+  const fd = new FormData(form);
+  const data = {};
+
+  for (let [key, value] of fd.entries()) {
+    if (data[key] !== undefined) {
+      if (!Array.isArray(data[key])) data[key] = [data[key]];
+      data[key].push(value);
+    } else {
+      data[key] = value;
+    }
+  }
+
+  document.querySelectorAll('input[type="radio"]').forEach(r => {
+    if (data[r.name] === undefined) data[r.name] = null;
+  });
+
+  if (data.q1_jobs) {
+    data.q1_jobs = Array.isArray(data.q1_jobs) ? data.q1_jobs : [data.q1_jobs];
+    data.q1_jobs = data.q1_jobs.filter(v => v && v.trim());
+  }
+
+  data._submitted_at = new Date().toISOString();
+  data._form_version = '1.0';
+
+  return data;
+}
+
+document.getElementById('surveyForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const missing = [];
+  const seenRadios = new Set();
+  document.querySelectorAll('[required]').forEach(el => {
+    if (el.type === 'radio') {
+      if (!seenRadios.has(el.name)) {
+        seenRadios.add(el.name);
+        if (!document.querySelector(`input[name="${el.name}"]:checked`)) {
+          missing.push(el.name);
+        }
+      }
+    } else if (el.type === 'checkbox') {
+      if (!el.checked) missing.push(el.name);
+    } else if (!el.value.trim()) {
+      missing.push(el.name);
+    }
+  });
+
+  if (missing.length > 0) {
+    showToast(`还有 ${missing.length} 项必填未完成`, 'error');
+    const firstMissing = document.querySelector(`[name="${missing[0]}"]`);
+    if (firstMissing) {
+      firstMissing.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      firstMissing.focus();
+    }
+    return;
+  }
+
+  formData = collectData();
+  // 收集必填字段名（供后端计算完成率）
+  const requiredKeys = [...seenRadios];
+  document.querySelectorAll('[required]').forEach(el => {
+    if (!requiredKeys.includes(el.name) && el.type !== 'radio') {
+      requiredKeys.push(el.name);
+    }
+  });
+  formData._required_keys = requiredKeys;
+
+  // 提交到后端
+  const submitBtn = e.target.querySelector('button[type="submit"]') || document.querySelector('button[form="surveyForm"]');
+  const oldText = submitBtn ? submitBtn.textContent : '';
+  if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = '⏳ 提交中…'; }
+
+  fetch(API_BASE + '/api/surveys', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(formData)
+  })
+  .then(r => r.json())
+  .then(j => {
+    if (j.ok) {
+      showModal(`✅ 提交成功！\n\n编号：${j.interview_no}\n完成率：${j.completion_rate}%\n\n已保存到云端，可在「问卷管理」标签查看。`);
+    } else {
+      throw new Error(j.error || '提交失败');
+    }
+  })
+  .catch(err => {
+    showModal(`⚠️ 自动保存到云端失败：${err.message}\n\n您仍可点击「导出 JSON」手动备份数据。`);
+  })
+  .finally(() => {
+    if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = oldText || '✅ 提交问卷'; }
+  });
+});
+
+function previewData() {
+  formData = collectData();
+  document.getElementById('previewContent').textContent = JSON.stringify(formData, null, 2);
+  document.getElementById('previewModal').classList.add('show');
+}
+
+function showModal(msg) {
+  document.getElementById('previewContent').textContent = msg;
+  document.getElementById('previewModal').classList.add('show');
+}
+
+function closeModal() {
+  document.getElementById('previewModal').classList.remove('show');
+}
+
+function exportJSON() {
+  formData = collectData();
+  const blob = new Blob([JSON.stringify(formData, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `MOZI问卷_${new Date().toISOString().slice(0,10)}_${Date.now()}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showToast('JSON 数据已导出', 'success');
+}
+
+function resetForm() {
+  if (!confirm('确定要清空所有已填写的内容吗？此操作不可撤销。')) return;
+  document.getElementById('surveyForm').reset();
+  document.querySelectorAll('.option.checked').forEach(o => o.classList.remove('checked'));
+  document.querySelectorAll('.option-other.visible').forEach(o => o.classList.remove('visible'));
+  // 清空所有动态添加的输入行
+  document.querySelectorAll('.list-input').forEach(list => {
+    while (list.children.length > 1) list.removeChild(list.lastChild);
+    const firstInput = list.querySelector('input');
+    if (firstInput) firstInput.value = '';
+  });
+  document.querySelectorAll('.list-input').forEach(list => updateRemoveButtons(list.id));
+  formData = {};
+  updateProgress();
+  showToast('已清空表单');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+updateProgress();
+document.querySelectorAll('.list-input').forEach(list => updateRemoveButtons(list.id));
+</script>
+</body>
+</html>

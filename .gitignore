@@ -1,0 +1,37 @@
+# 依赖
+node_modules/
+
+# 数据库（不要上传，可能含敏感数据）
+data/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# 日志
+logs/
+*.log
+npm-debug.log*
+
+# 环境变量（不要上传密钥）
+.env
+.env.local
+
+# 系统文件
+.DS_Store
+Thumbs.db
+*~
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+
+# 临时文件
+空白.docx
+~$空白.docx
+空白.txt
+MOZI企创赛.txt
+
+# 原稿（保留本地参考，不上传到部署仓库）
+MOZI企创赛 - 制造业方向 - 深访问卷填答表_修订版.docx
